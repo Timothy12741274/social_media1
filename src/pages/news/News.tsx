@@ -4,7 +4,7 @@ import ReactDOM from "react-dom/client";
 const News = () => {
     let [secondCounter, setSecondCounter] = useState(0)
     const incCounter = () => {
-      setSecondCounter(secondCounter += 1)
+        setSecondCounter(secondCounter += 1)
     }
 
     //setInterval(()=>console.log(window.scrollY), 2000)
@@ -18,7 +18,7 @@ const News = () => {
     //console.log(window.innerHeight)
     let [signal, setSignal] = useState(false)
     let [Bot, setBot] = useState(0)
-    const onWheelHandler = (el:any)=>{
+    const onWheelHandler = (el: any) => {
         //console.log('a')
         /*const infoObj = el.getBoundingClientRect()
         console.log(infoObj.height)
@@ -41,30 +41,62 @@ const News = () => {
             setBot(bot)
             console.log('signal')
         }*/
-        console.log('0')
+        //console.log('0')
+        /*console.log(bot)
         if(window.innerHeight - 5 < bot && bot < window.innerHeight + 5){
             //console.log('1')
             if(bot < window.innerHeight){
-                //console.log('1_1')
+                console.log('1_1')
                 setSignal(true)
             } else {
-                //console.log('1_2')
+                console.log('1_2')
                 setSignal(false)
             }
+        }*/
+        console.log(window.scrollY)
+
+        if (window.scrollY > 222 && !signal) {
+            setSignal(true)
+        }
+        if (window.scrollY < 222 && signal) {
+            setSignal(false)
         }
 
 
     }
-    console.log(`${Bot < window.innerHeight}, Bot: ${Bot}, window.innerHeight: ${window.innerHeight}`)
-
+    //console.log(`${Bot < window.innerHeight}, Bot: ${Bot}, window.innerHeight: ${window.innerHeight}`)
+    /*style={{position: "fixed", right: window.innerWidth/5, width: window.innerWidth*0.22, backgroundColor: "aquamarine"}}*/
     return (
         <div className={'k'}>
-            <div className={'bn1'}>b1</div>
-            <div style={{position: "relative"}}
-                className={'bn2'} onWheel={(e)=>onWheelHandler(e.currentTarget)}>b2
-                <div style={signal ? {position: "absolute", bottom: 0, backgroundColor: "green", width: '100%'}
-                    : {position: "absolute", bottom: 0, backgroundColor: "red", width: '100%'}}>a</div>
+            <div
+                className={'bn1'}
+                onWheel={(e) => onWheelHandler(e.currentTarget)}
+
+            >
+                <div className={'bn1_1e'}>
+
+                </div>
+                <div className={'bn1_2e'}>
+
+                </div>
+                <div className={'bn1_3e'}>
+
+                </div>
             </div>
+            <div
+                className={signal ? 'bn2Fxd' : 'bn2'}
+                /*onWheel={(e)=>onWheelHandler(e.currentTarget)}*/
+
+            >
+                <div className={'bn2_1e'}></div>
+                {/*<div style={signal ? {position: "fixed", bottom: 0, backgroundColor: "green"}
+                    : {position: "fixed", bottom: 0, backgroundColor: "red", }}>a</div>*/}
+            </div>
+            {/*<div
+                className={signal ? 'bn2Fxd' : 'bn2'}
+            >b2
+            </div>*/}
+
         </div>
     );
 };

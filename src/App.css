@@ -1,10 +1,10 @@
 
-
-l{
+l {
     margin: 0;
     padding: 0;
     top: 0
 }
+
 .App {
     display: grid;
     grid-template-rows:  70vw;
@@ -13,27 +13,47 @@ l{
 "s m";
     grid-area: a;
 }
-.k{
+
+.k {
     display: grid;
     grid-template-columns: 60% 40%;
     column-gap: 10%;
     grid-template-areas: "bn1 bn2";
 }
-.bn1{
+
+.bn1 {
     grid-area: bn1;
-    background-color: green;
+    /*background-color: green;*/
     color: aquamarine;
     height: 250vh;
+    overflow: auto;
+    row-gap: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-.bn2{
+
+.bn2 {
     grid-area: bn2;
+    /*background-color: aqua;*/
+    height: 120vh;
+
+}
+
+.bn2Fxd {
+    position: fixed;
+    right: calc((100vw / 5) - 84px);
+    width: calc(100vw * 0.22);
+    top: -170px;
     background-color: aqua;
     height: 120vh;
 }
-.bn1, .bn2{
-    border-radius: 15px;
+
+.bn1, .bn2, .bn2Fxd {
+    border-radius: 12px;
     overflow: hidden;
 }
+
 .header {
     grid-area: h;
     background-color: white;
@@ -59,34 +79,40 @@ l{
 "b4 p1"
 "b5 p2";
 }
-.e{
+
+.e {
 
 }
-.b1, .b2, .b3, .b4, .b5{
+
+.b1, .b2, .b3, .b4, .b5 {
     border-radius: 10px;
     overflow: hidden;
 }
 
 
-.b1{
+.b1 {
     grid-area: b1;
     background-color: #cacabd;
 
 }
-.b2{
-grid-area: b2;
+
+.b2 {
+    grid-area: b2;
     background-color: azure;
 }
-.b3{
-grid-area: b3;
+
+.b3 {
+    grid-area: b3;
     background-color: antiquewhite;
 }
-.b4{
-grid-area: b4;
+
+.b4 {
+    grid-area: b4;
     background-color: aqua;
 }
-.b5{
-grid-area: b5;
+
+.b5 {
+    grid-area: b5;
     background-color: aquamarine;
 }
 
@@ -102,4 +128,33 @@ grid-area: b5;
 
 .abc {
     color: black;
+}
+
+.bn1_1e, .bn1_2e, .bn1_3e {
+    background-color: white;
+    border-radius: 12px;
+}
+
+.bn1_1e {
+    width: 100%;
+    height: 45px;
+}
+
+.bn1_2e {
+    width: 100%;
+    height: 220px;
+}
+
+.bn1_3e {
+    width: 100%;
+    height: 180px;
+
+}
+.bn2_1e{
+    width: 100%;
+    background-color: white;
+    border-radius: 12px;
+}
+.bn2_1e{
+    height: 375px;
 }

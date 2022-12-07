@@ -61,7 +61,7 @@ export const list = [
     {
         icon: LibraryMusicOutlinedIcon,
         name: 'Photos',
-        path: '/photos',
+        path: '/albums',
         component: MyPage
     },
     {
